@@ -344,68 +344,54 @@ main {
   background-color: #d32f2f;
 }
 
-/* Container utama untuk halaman 404 */
 .not-found-page {
-  /* Menggunakan Flexbox untuk menengahkan konten */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Menengahkan secara vertikal */
-  align-items: center; /* Menengahkan secara horizontal */
+  justify-content: center;
+  align-items: center;
 
-  /* Memberi tinggi minimal agar mengisi sebagian besar layar */
   min-height: 70vh;
-
-  /* Memberi sedikit ruang di sisi */
   padding: 2rem;
 
-  /* Teks di dalam container juga ditengahkan */
   text-align: center;
-
-  /* Warna teks dasar */
   color: #333;
 }
 
-/* Judul utama (tulisan "404") */
 .not-found-page h2 {
-  font-size: 6rem; /* Ukuran font sangat besar untuk penekanan */
-  font-weight: 700; /* Tebal */
-  /* Warna yang kuat tapi tidak terlalu mencolok */
-  color: #2c3e50;
-  /* Menghilangkan margin bawah default agar lebih dekat ke paragraf */
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--on-background-grey);
   margin-bottom: 0.5rem;
   margin-top: 0;
 }
 
-/* Paragraf deskripsi */
 .not-found-page p {
-  font-size: 1.25rem; /* Ukuran font yang mudah dibaca */
-  color: #7f8c8d; /* Warna abu-abu lembut */
+  font-size: 1.2rem;
+  color: #7f8c8d;
   margin-top: 0;
-  margin-bottom: 2rem; /* Memberi jarak ke tombol */
-  max-width: 400px; /* Batasi lebar agar tidak terlalu panjang di layar besar */
+  margin-bottom: 2rem;
+  max-width: 400px;
 }
 
-/* Tombol/Link untuk kembali ke Halaman Utama */
 .not-found-page a {
-  display: inline-block; /* Agar bisa diberi padding dan style lain */
-  text-decoration: none; /* Menghilangkan garis bawah pada link */
-  background-color: #3498db; /* Warna latar biru yang cerah */
-  color: #ffffff; /* Warna teks putih */
-  padding: 12px 24px; /* Padding di dalam tombol (vertikal dan horizontal) */
-  border-radius: 8px; /* Sudut yang sedikit membulat */
-  font-weight: 600; /* Teks agak tebal */
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--on-background);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
 
-  /* Efek transisi yang mulus saat hover */
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
 }
 
-/* Efek saat kursor mouse berada di atas tombol */
 .not-found-page a:hover {
-  background-color: #2980b9; /* Warna biru menjadi sedikit lebih gelap */
-  transform: translateY(-2px); /* Tombol sedikit terangkat */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Memberi sedikit bayangan */
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .judul-action {
