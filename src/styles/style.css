@@ -1,0 +1,501 @@
+:root {
+  --primary: #bb86fc;
+  --primary-variant: #3700b3;
+  --secondary: #03dac6;
+  --background: #121212;
+  --surface: #121212;
+  --error: #cf6679;
+  --warning: #f39c12;
+  --on-background: #ffffff;
+  --on-background-grey: #c7c7c7;
+  --on-surface: #ffffff;
+}
+
+[data-theme="light"] {
+  --background: #dddddd;
+  --suface: #ffffff;
+  --on-background: #333333;
+  --on-background-grey: #6d6d6d;
+  --on-surface: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--on-background);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.app-container {
+  color: var(--on-background);
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: all ease-in-out 0.5s;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--on-background);
+}
+
+header h1 {
+  flex: 1;
+}
+
+header h1 .judul {
+  text-decoration: none;
+}
+
+header .navigation {
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 8px;
+}
+
+main {
+  margin: 0 auto;
+  padding: 32px 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty {
+  margin-top: 32px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty p {
+  text-align: center;
+  color: var(--on-background-grey);
+}
+.note-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--on-background);
+  border-top: 5px solid;
+}
+
+.note-item__title {
+  margin: 4px 0;
+}
+
+.note-item__createdAt {
+  color: var(--on-background-grey);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.note-item__body {
+  font-size: 14px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.detail-page {
+  margin: 0 auto;
+  margin-top: 32px;
+  width: 90%;
+}
+
+.detail-page__title {
+  font-size: 45px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.detail-page__createdAt {
+  color: var(--on-background-grey);
+}
+
+.detail-page__body {
+  line-height: 1.5;
+  margin-top: 36px;
+  font-size: 18px;
+}
+
+.detail-page__action,
+.homepage__action,
+.add-new-page__action {
+  position: fixed;
+  display: flex;
+  gap: 16px;
+  bottom: 32px;
+  right: 32px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: var(--on-background);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.action-icon {
+  display: flex;
+  align-items: center;
+  color: var(--background);
+}
+
+.add-new-page__input {
+  margin-top: 32px;
+}
+
+.add-new-page__input .add-new-page__input__title {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: var(--on-background);
+  font-family: "Inter", sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  padding: 8px 0;
+  margin-bottom: 16px;
+}
+
+.add-new-page__input__title::placeholder {
+  color: var(--on-background-grey);
+}
+
+.add-new-page__input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: var(--on-background);
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  padding: 8px 0;
+  min-height: 480px;
+}
+
+/* Mengubah warna placeholder editor Quill */
+.ql-editor.ql-blank::before {
+  color: white;
+  opacity: 0.4;
+  font-style: italic;
+}
+
+[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--on-background-grey);
+}
+
+.search-bar input {
+  margin: 16px 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border: 1px solid var(--on-background);
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  color: var(--on-background);
+}
+
+.search-bar input::placeholder {
+  color: var(--on-background-grey);
+}
+
+.toggle-theme,
+.toggle-locale {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--on-background);
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+}
+
+.toggle-theme {
+  font-size: 36px;
+}
+
+.toggle-locale {
+  font-size: 28px;
+}
+
+.input-login,
+.input-register {
+  margin: 32px 0;
+}
+
+.input-login label,
+.input-register label {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.input-login input,
+.input-register input {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 3px solid var(--on-background);
+  color: var(--on-background);
+}
+
+.input-login button,
+.input-register button {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--on-background);
+  color: var(--background);
+  cursor: pointer;
+}
+
+.button-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 0;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--on-background);
+}
+
+.note-item__action-cart {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* jarak antar tombol */
+  margin-top: auto; /* dorong ke bawah */
+}
+
+.note-item__action-cart button {
+  flex: 1; /* tombol sama besar */
+  padding: 5px 0; /* lebih tinggi */
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+/* Warna untuk tombol Arsipkan */
+.note-item__action-cart button:first-child {
+  background-color: #757575;
+  color: white;
+}
+
+.note-item__action-cart button:first-child:hover {
+  background-color: #929292;
+}
+
+/* Warna untuk tombol Hapus */
+.note-item__action-cart button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.note-item__action-cart button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+/* Container utama untuk halaman 404 */
+.not-found-page {
+  /* Menggunakan Flexbox untuk menengahkan konten */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Menengahkan secara vertikal */
+  align-items: center; /* Menengahkan secara horizontal */
+
+  /* Memberi tinggi minimal agar mengisi sebagian besar layar */
+  min-height: 70vh;
+
+  /* Memberi sedikit ruang di sisi */
+  padding: 2rem;
+
+  /* Teks di dalam container juga ditengahkan */
+  text-align: center;
+
+  /* Warna teks dasar */
+  color: #333;
+}
+
+/* Judul utama (tulisan "404") */
+.not-found-page h2 {
+  font-size: 6rem; /* Ukuran font sangat besar untuk penekanan */
+  font-weight: 700; /* Tebal */
+  /* Warna yang kuat tapi tidak terlalu mencolok */
+  color: #2c3e50;
+  /* Menghilangkan margin bawah default agar lebih dekat ke paragraf */
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+/* Paragraf deskripsi */
+.not-found-page p {
+  font-size: 1.25rem; /* Ukuran font yang mudah dibaca */
+  color: #7f8c8d; /* Warna abu-abu lembut */
+  margin-top: 0;
+  margin-bottom: 2rem; /* Memberi jarak ke tombol */
+  max-width: 400px; /* Batasi lebar agar tidak terlalu panjang di layar besar */
+}
+
+/* Tombol/Link untuk kembali ke Halaman Utama */
+.not-found-page a {
+  display: inline-block; /* Agar bisa diberi padding dan style lain */
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  background-color: #3498db; /* Warna latar biru yang cerah */
+  color: #ffffff; /* Warna teks putih */
+  padding: 12px 24px; /* Padding di dalam tombol (vertikal dan horizontal) */
+  border-radius: 8px; /* Sudut yang sedikit membulat */
+  font-weight: 600; /* Teks agak tebal */
+
+  /* Efek transisi yang mulus saat hover */
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Efek saat kursor mouse berada di atas tombol */
+.not-found-page a:hover {
+  background-color: #2980b9; /* Warna biru menjadi sedikit lebih gelap */
+  transform: translateY(-2px); /* Tombol sedikit terangkat */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Memberi sedikit bayangan */
+}
+
+.judul-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-archive-backhome {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.action-icon-backhome {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.action-text-backhome {
+  font-size: 18px;
+}
+
+/* --- Footer --- */
+footer {
+  width: 100%;
+  padding: 2rem 0;
+  margin-top: 48px; /* Memberi jarak dari konten di atasnya */
+  background-color: var(--surface); /* Warna yang sama dengan kartu */
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary); /* Teks di footer tidak terlalu menonjol */
+}
+
+.footer-separator {
+  width: 1180px;
+  height: 1px;
+  opacity: 0.3;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px; /* Padding horizontal agar tidak menempel di tepi layar kecil */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  gap: 16px; /* Jarak antara teks dan ikon jika posisinya vertikal */
+  opacity: 0.7;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Jarak antar ikon */
+}
+
+.footer-links a {
+  color: var(--text-secondary); /* Warna ikon default */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary); /* Warna ikon saat di-hover (menggunakan warna aksen) */
+}
+
+/* Mengatur agar ikon SVG mewarisi warna dari tag <a> induknya */
+.footer-links svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@media screen and (min-width: 650px) {
+  .notes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-page__title {
+    font-size: 45px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
