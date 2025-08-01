@@ -1,18 +1,18 @@
 :root {
-  --primary: #bb86fc;
-  --primary-variant: #3700b3;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
   --secondary: #03dac6;
-  --background: #121212;
-  --surface: #121212;
-  --error: #cf6679;
-  --warning: #f39c12;
+  --background: #111827;
+  --surface: #1f2937;
+  --error: #ef4444;
+  --warning: #f59e0b;
   --on-background: #ffffff;
   --on-background-grey: #c7c7c7;
   --on-surface: #ffffff;
 }
 
 [data-theme="light"] {
-  --background: #dddddd;
+  --background: #f3f4f6;
   --suface: #ffffff;
   --on-background: #333333;
   --on-background-grey: #6d6d6d;
@@ -97,6 +97,14 @@ main {
 
 .note-item__title {
   margin: 4px 0;
+}
+
+.note-item__link {
+  text-decoration: none;
+}
+
+.note-item__link:hover {
+  text-decoration: underline;
 }
 
 .note-item__createdAt {
@@ -312,6 +320,8 @@ main {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
+
+  opacity: 0.8;
 }
 
 /* Warna untuk tombol Arsipkan */

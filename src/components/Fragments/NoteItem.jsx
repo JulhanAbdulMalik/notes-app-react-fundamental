@@ -7,10 +7,10 @@ import { HiArchiveBoxArrowDown, HiTrash } from "react-icons/hi2";
 function NoteItem({ id, title, createdAt, body, onDeleteNote, onArchiveNote }) {
   return (
     <article className="note-item">
-      <h3 className="note-item__title">
-        <Link to={`/note/${id}`}>{title}</Link>
-      </h3>
-      <p className="note-item__createdAt">{showFormattedDate(createdAt)}</p>
+      <Link to={`/note/${id}`} className="note-item__link">
+        <h3 className="note-item__title">{title}</h3>
+        <p className="note-item__createdAt">{showFormattedDate(createdAt)}</p>
+      </Link>
       <p
         className="note-item__body"
         dangerouslySetInnerHTML={{ __html: body }}
